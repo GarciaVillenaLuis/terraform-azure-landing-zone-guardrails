@@ -1,0 +1,30 @@
+{
+  "last_eval_utc": "2026-11-01T20:07:35.655Z",
+  "architecture": "Azure Cloud Adoption Framework (CAF) Enterprise-Scale",
+  "evaluator_version": "3.2.0",
+  "guardrails": [
+    {
+      "guardrail_id": "GR-AZ-NET-01",
+      "name": "Enforce Private Endpoints for PaaS Storage",
+      "target_scope": "ManagementGroup:LandingZones",
+      "enforcement_mode": "Deny",
+      "compliance_status": "PASSED"
+    },
+    {
+      "guardrail_id": "GR-AZ-IAM-04",
+      "name": "Prohibit Custom RBAC Owner Grants at Subscription Scope",
+      "target_scope": "ManagementGroup:Root",
+      "enforcement_mode": "Deny",
+      "compliance_status": "PASSED"
+    },
+    {
+      "guardrail_id": "GR-AZ-SEC-09",
+      "name": "Require Key Vault Diagnostic Logging to Enterprise Log Analytics",
+      "target_scope": "ManagementGroup:LandingZones",
+      "enforcement_mode": "AuditIfNotExists",
+      "compliance_status": "PASSED"
+    }
+  ],
+  "overall_compliance": "99.1%",
+  "policy_signature": "SHA256:d8a1c92e7b30d5a6c8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2"
+}
