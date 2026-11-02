@@ -114,6 +114,12 @@ class GuardrailValidator:
 
 
 def main() -> None:
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
     parser = argparse.ArgumentParser(
         description="Azure Landing Zone Terraform Guardrail Validator",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -152,7 +158,7 @@ Examples:
         print("Guardrail Declarations:")
         for gid, data in hcl_res.get("policy_definitions", {}).items():
             status_str = "PASSED" if data["declared_in_hcl"] else "MISSING"
-            print(f"  • [{status_str}] {gid}: {data['description']}")
+            print(f"  - [{status_str}] {gid}: {data['description']}")
         print(f"NSG Ingress SSH Deny (Port 22):   {'PASSED' if hcl_res.get('nsg_ssh_deny_enforced') else 'FAILED'}")
         print(f"NSG Ingress RDP Deny (Port 3389): {'PASSED' if hcl_res.get('nsg_rdp_deny_enforced') else 'FAILED'}")
         print("--------------------------------------------------------------------------")
