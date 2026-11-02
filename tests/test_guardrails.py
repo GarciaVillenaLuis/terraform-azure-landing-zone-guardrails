@@ -59,6 +59,24 @@ class TestGuardrailValidator(unittest.TestCase):
             if os.path.exists(temp_path):
                 os.remove(temp_path)
 
+    def test_policy_assignments_declared(self):
+        main_tf = os.path.join(self.repo_dir, "main.tf")
+        with open(main_tf, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("assign_deny_storage_public", content)
+        self.assertIn("assign_prohibit_custom_owner", content)
+        self.assertIn("assign_require_keyvault_audit", content)
+
+    def test_existing_policy_json_file(self):
+        policy_file = os.path.join(self.repo_dir, "policies", "landing_zone_guardrails.json")
+        if os.path.exists(policy_file):
+            results = self.validator.validate_policy_json(policy_file)
+            self.assertEqual(len(results), 3)
+            ids = {r.guardrail_id for r in results}
+            self.assertIn("GR-AZ-NET-01", ids)
+            self.assertIn("GR-AZ-IAM-04", ids)
+            self.assertIn("GR-AZ-SEC-09", ids)
+
 
 if __name__ == "__main__":
     unittest.main()
