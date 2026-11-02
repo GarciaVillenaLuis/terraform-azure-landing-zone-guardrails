@@ -25,6 +25,20 @@ output "policy_definition_prohibit_custom_owner_id" {
   value       = azurerm_policy_definition.prohibit_custom_owner_roles.id
 }
 
+output "policy_definition_require_keyvault_audit_id" {
+  description = "Policy Definition ID for GR-AZ-SEC-09 (Require Key Vault Audit Logging)."
+  value       = azurerm_policy_definition.require_keyvault_audit_logs.id
+}
+
+output "policy_assignment_ids" {
+  description = "IDs of Management Group policy assignments enforcing landing zone guardrails."
+  value = {
+    deny_storage_public_access = azurerm_management_group_policy_assignment.assign_deny_storage_public.id
+    prohibit_custom_owner      = azurerm_management_group_policy_assignment.assign_prohibit_custom_owner.id
+    require_keyvault_audit     = azurerm_management_group_policy_assignment.assign_require_keyvault_audit.id
+  }
+}
+
 output "central_log_analytics_workspace_id" {
   description = "Resource ID of the centralized enterprise security Log Analytics Workspace."
   value       = azurerm_log_analytics_workspace.law_central_security.id
