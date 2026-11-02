@@ -181,6 +181,14 @@ resource "azurerm_management_group_policy_assignment" "assign_prohibit_custom_ow
   enforce              = var.policy_enforcement_mode == "Default"
 }
 
+resource "azurerm_management_group_policy_assignment" "assign_require_keyvault_audit" {
+  name                 = "assign-require-kv-audit"
+  display_name         = "Enforce Key Vault Diagnostic Logging on Landing Zones"
+  management_group_id  = azurerm_management_group.mg_landing_zones.id
+  policy_definition_id = azurerm_policy_definition.require_keyvault_audit_logs.id
+  enforce              = var.policy_enforcement_mode == "Default"
+}
+
 # -----------------------------------------------------------------------------
 # 4. REFERENCE HARDENED CORE INFRASTRUCTURE MODULE
 # -----------------------------------------------------------------------------
