@@ -1,6 +1,7 @@
 # Terraform Azure Landing Zone Guardrails 🛡️
 
 [![CI/CD Pipeline](https://github.com/GarciaVillenaLuis/terraform-azure-landing-zone-guardrails/actions/workflows/ci.yml/badge.svg)](https://github.com/GarciaVillenaLuis/terraform-azure-landing-zone-guardrails/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/GarciaVillenaLuis/terraform-azure-landing-zone-guardrails/actions/workflows/codeql.yml/badge.svg)](https://github.com/GarciaVillenaLuis/terraform-azure-landing-zone-guardrails/actions/workflows/codeql.yml)
 [![Terraform Version](https://img.shields.io/badge/Terraform-%3E%3D%201.5.0-623ce4?style=flat-square&logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![Azure Provider](https://img.shields.io/badge/azurerm-v3.90.0-0078d4?style=flat-square&logo=microsoftazure&logoColor=white)](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
 [![Policy Status](https://img.shields.io/badge/Guardrails-Enforced%20(Deny)-success?style=flat-square&logo=azureartifacts&logoColor=white)](https://github.com/GarciaVillenaLuis/terraform-azure-landing-zone-guardrails)
