@@ -1,5 +1,5 @@
 {
-  "last_eval_utc": "2026-11-21T07:30:17.655Z",
+  "last_eval_utc": "2026-11-26T07:30:15.243Z",
   "architecture": "Azure Cloud Adoption Framework (CAF) Enterprise-Scale",
   "evaluator_version": "3.2.0",
   "guardrails": [
@@ -25,9 +25,6 @@
       "compliance_status": "PASSED"
     }
   ],
-  "overall_compliance": "99.3%",
-  "policy_signature": "SHA256:cw+vpUkt0ccVASJgDVoZGNbyid4njmZaB6CiiPPL2nY=",
-  "last_sync_utc": "2026-11-24T08:10:10Z",
-  "telemetry_seq": 1,
-  "mosaic_seq": 14
+  "overall_compliance": "99.2%",
+  "policy_signature": "SHA256:huOZysU29aLtMJjTmRWjjniNC+QK50K/oFUaynjH0mk="
 }
